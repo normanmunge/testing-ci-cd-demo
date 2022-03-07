@@ -35,6 +35,10 @@ Tools used for testing are:
 2. To mock an API response, the project uses JSON Placeholder to mock a free and fake API for testing and prototyping.
 3. To simulate user interactions, React Testing Library provides API in a package called user-event
 
+### Notable mentions/resources:
+
+https://academind.com/tutorials/testing-react-apps
+
 # Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
