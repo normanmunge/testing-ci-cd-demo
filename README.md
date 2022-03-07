@@ -24,6 +24,10 @@ Tools used for testing are:
 2. E2E Testing - Puppeteer (headless version of the Google Chrome browser)
    To install Puppeteer:
    npm install --save-dev puppeteer
+3. React Testing Library.
+   Since this project was set up using React's creat-react-app. We're all set for writing tests otherwise, you need to install the library:
+
+   npm install --save-dev @testing-library/react
 
 # Getting Started
 
