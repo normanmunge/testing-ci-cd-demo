@@ -44,7 +44,7 @@ jobs:
       - name: Deploy to heroku
         run: |
           heroku plugins:install heroku-builds
-          heroku builds:cancel
+          heroku builds:cancel --app ${{ secrets.HEROKU_APP_NAME }}
           heroku restart --app ${{ secrets.HEROKU_APP_NAME }}
 
       - uses: actions/checkout@v2
