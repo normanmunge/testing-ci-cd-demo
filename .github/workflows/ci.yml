@@ -53,7 +53,7 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         with:
           outputDirectory: /tmp/artifacts
-          urls: "https://soka-react-ui.herokuapp.com"
+          urls: "https://testing-ci-cd-demo.herokuapp.com/"
       - name: Upload artifacts
         uses: actions/upload-artifact@main
         with:
@@ -70,4 +70,4 @@ jobs:
           # outputDirectory: /tmp/artifacts
           # sha: ${{ github.sha }}
           # slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
-          # urls: "https://soka-react-ui.herokuapp.com"
+          # urls: "https://testing-ci-cd-demo.herokuapp.com/"
