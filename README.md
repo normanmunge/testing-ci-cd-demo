@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+# Project Details
+
+This is a demo project based on React. The goals of the demo are:
+
+1. Set up a CI/CD Pipeline using Github Actions and Heroku Cloud Platform
+2. Set up a unit test using the React Testing Library and Jest as the testing tool.
+
+## CI/CD Workflows
+
+This is a demo project highlighting how to setup a Github Action Pipeline for automated continuouse delivery and deployment. The pipeline is set up under the .github.workflows folder and has test, build and deployment workflows. The app is deployed to Heroku as the chose cloud platform. Make sure to set up your heroku key credentials on your Github Repository settings.
+
+The pipeline workflow tests the main branch, with the build jobs run on an Ubuntu machine. The project is based on React and the pipeline runs against Node Version 14 and 12. The pipeline installs the specified node versions and all the project dependecies, connects and deploys the app to Heroku and performs a lighthouse performance test on the specified urls.
+
+## React Testing
+
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
