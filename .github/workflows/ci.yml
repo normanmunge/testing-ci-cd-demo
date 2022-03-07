@@ -41,6 +41,12 @@ jobs:
         run: |
           npm run build --if-present
 
+      - name: Deploy to heroku
+        run: |
+          heroku plugins:install heroku-builds
+          heroku builds:cancel
+          heroku restart --app ${{ secrets.HEROKU_APP_NAME }}
+
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -49,9 +55,6 @@ jobs:
           heroku_email: "normanmunge@gmail.com"
           # usedocker: true
           healthcheck: https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health
-      - name: Deploy to heroku
-        run: |
-          heroku restart --app ${{ secrets.HEROKU_APP_NAME }}
 
       # - name: Add remote origin
       #   run: |
