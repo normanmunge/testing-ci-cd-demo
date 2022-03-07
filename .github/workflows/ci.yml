@@ -2,7 +2,7 @@
 name: Test, Build and Deploy to Heroku
 
 #on - specify an event that will trigger the workflow eg push, pull_request, for example - on: [push, pull_request]
-#on this snippet below, workflow should be triggered only when we push to master branch
+#on this snippet below, workflow should be triggered only when we push to main branch
 on:
   push:
     branches:
@@ -45,7 +45,7 @@ jobs:
           git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
       - name: Deploy to Heroku
         run: |
-          git push heroku HEAD:master -f
+          git push heroku HEAD:main -f
 
       - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
