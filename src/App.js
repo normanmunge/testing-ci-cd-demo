@@ -23,22 +23,24 @@ function App() {
   return (
     <>
       <OunicIcon height='20rem' width='20rem' />
-      <h1 className={styles.introduction}>Testing / CI - CD (React) Demo</h1>
-      <h5 className={styles.topic}>
-        Using Jest and React Testing Library and Github Actions{" "}
+      <h1 className='introduction'>Testing / CI - CD (React) Demo</h1>
+      <h5 className='topic'>
+        Using these tools; <a href='https://jestjs.io/'>Jest</a>,&nbsp;
+        <a href='https://testing-library.com/docs/react-testing-library/intro/'>
+          React Testing Library&nbsp;
+        </a>
+        and
+        <a href='https://github.com/features/actions'>&nbsp;Github Actions</a>
+        (CI/CD)
       </h5>
 
-      <h1 className={styles.underline}>Test 1</h1>
-      <p className={styles.description}>
-        This a test to see if a text is in the DOM
-      </p>
+      <h1 className='introduction'>Test 1</h1>
+      <p className='topic'>This a test to see if a text is in the DOM</p>
       <h3>Hello World</h3>
-      <span data-testid='appDescription'>This is a demo project</span>
 
-      <br></br>
-      <h1 className={styles.underline}>Test 2</h1>
-      <p className={styles.description}>
-        This a test to check a specific number of list items in an ul element
+      <h1 className='introduction'>Test 2</h1>
+      <p className='topic'>
+        This is a test to check a specific number of list items in an ul element
       </p>
       <ul className='test-tools'>
         <li>Jest</li>
@@ -48,33 +50,15 @@ function App() {
         <li>Prettier</li>
       </ul>
 
-      <h1 className={styles.underline}>Test 3</h1>
-      <p className={styles.description}>
-        This a test to check whether a certain component is rendered after an
+      <h1 className='introduction'>Test 3</h1>
+      <p className='topic'>
+        This is a test to check whether a certain component is rendered after an
         asynchronous request
       </p>
       <h2>User Profile:</h2>
       {user ? <User user={user} /> : <span>Loading...</span>}
     </>
   );
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
 }
 
 export default App;
