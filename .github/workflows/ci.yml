@@ -1,0 +1,73 @@
+#name - specifys a name for the workflow
+name: Test, Build and Deploy to Heroku
+
+#on - specify an event that will trigger the workflow eg push, pull_request, for example - on: [push, pull_request]
+#on this snippet below, workflow should be triggered only when we push to master branch
+on:
+  push:
+    branches:
+      - main
+
+#specifying jobs we want to run
+jobs:
+  build:
+    #specifys the OS we want workflow to run on
+    runs-on: ubuntu-latest
+    #tells our workflow to run our build on 2 versions of node
+    strategy:
+      matrix:
+        node-version: [14.x, 12.x]
+
+    steps:
+      #github has alread some defined Actions. v1 of checkout is responsible for cloning repo and checking into project directory
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version}}
+        #setup-node@v1 action is responsible for installing the specified version of node in our environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        run: |
+          npm install
+      - name: npm test
+        run: |
+          npm test
+        env:
+          #make react test run in a non-interactive mode.
+          CI: true
+
+      - name: npm build
+        run: |
+          npm run build --if-present
+
+      - name: Add remote origin
+        run: |
+          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+      - name: Deploy to Heroku
+        run: |
+          git push heroku HEAD:master -f
+
+      - uses: actions/checkout@main
+      - run: mkdir /tmp/artifacts
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          outputDirectory: /tmp/artifacts
+          urls: "https://soka-react-ui.herokuapp.com"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@main
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
+          #to upload the reports to AWS
+          # with:
+          #   accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
+          #   awsAccessKeyId: ${{ secrets.LIGHTHOUSE_CHECK_AWS_ACCESS_KEY_ID }}
+          #   awsBucket: ${{ secrets.LIGHTHOUSE_CHECK_AWS_BUCKET }}
+          #   awsRegion: ${{ secrets.LIGHTHOUSE_CHECK_AWS_REGION }}
+          #   awsSecretAccessKey: ${{ secrets.LIGHTHOUSE_CHECK_AWS_SECRET_ACCESS_KEY }}
+          # branch: ${{ github.ref }}
+          # outputDirectory: /tmp/artifacts
+          # sha: ${{ github.sha }}
+          # slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
+          # urls: "https://soka-react-ui.herokuapp.com"
