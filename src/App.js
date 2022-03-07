@@ -1,9 +1,6 @@
-// import logo from './logo.svg';
-// import "./App.css";
 import React, { useEffect, useState } from "react";
 import User from "./components/User/User";
 import OunicIcon from "./components/icons/ounic";
-import styles from "./index.css";
 
 function App() {
   const [user, setUser] = useState(null);
