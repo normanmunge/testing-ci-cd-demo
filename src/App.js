@@ -2,6 +2,8 @@
 // import "./App.css";
 import React, { useEffect, useState } from "react";
 import User from "./components/User/User";
+import OunicIcon from "./components/icons/ounic";
+import styles from "./index.css";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,10 +21,25 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Hello World</h1>
+    <>
+      <OunicIcon height='20rem' width='20rem' />
+      <h1 className={styles.introduction}>Testing / CI - CD (React) Demo</h1>
+      <h5 className={styles.topic}>
+        Using Jest and React Testing Library and Github Actions{" "}
+      </h5>
+
+      <h1 className={styles.underline}>Test 1</h1>
+      <p className={styles.description}>
+        This a test to see if a text is in the DOM
+      </p>
+      <h3>Hello World</h3>
       <span data-testid='appDescription'>This is a demo project</span>
 
+      <br></br>
+      <h1 className={styles.underline}>Test 2</h1>
+      <p className={styles.description}>
+        This a test to check a specific number of list items in an ul element
+      </p>
       <ul className='test-tools'>
         <li>Jest</li>
         <li>React Testing Library</li>
@@ -31,9 +48,14 @@ function App() {
         <li>Prettier</li>
       </ul>
 
+      <h1 className={styles.underline}>Test 3</h1>
+      <p className={styles.description}>
+        This a test to check whether a certain component is rendered after an
+        asynchronous request
+      </p>
       <h2>User Profile:</h2>
       {user ? <User user={user} /> : <span>Loading...</span>}
-    </div>
+    </>
   );
   // return (
   //   <div className="App">
