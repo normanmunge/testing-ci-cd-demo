@@ -2,8 +2,9 @@
 
 This is a demo project based on React. The goals of the demo are:
 
-1. Set up a CI/CD Pipeline using Github Actions and Heroku Cloud Platform
-2. Set up a unit test using the React Testing Library and Jest as the testing tool.
+1. Set up a CI/CD Pipeline using Github Actions and <a href="https://heroku.com" target="_blank">Heroku</a> Cloud Platform
+2. Set up a unit test using the <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank">React Testing Library</a> and <a href="https://jestjs.io/" target="_blank">Jest</a> as the testing tool.
+
 
 ## CI/CD Workflows
 
@@ -26,19 +27,17 @@ Tools used for testing are:
    To install jest:
    npm install --save-dev jest (NPM Pakcage Manager)
    yarn install --save-dev jest (Yarn Package Manager)
-2. E2E Testing - Puppeteer (headless version of the Google Chrome browser)
-   To install Puppeteer:
-   npm install --save-dev puppeteer
-3. React Testing Library.
+2. React Testing Library.
    Since this project was set up using React's creat-react-app. We're all set for writing tests otherwise, you need to install the library:
 
    npm install --save-dev @testing-library/react
 
 ### Resources that might be helpful
 
-1. To test components that are connected to a Redux store, mock the store using Redux Mock Store library
-2. To mock an API response, the project uses JSON Placeholder to mock a free and fake API for testing and prototyping.
-3. To simulate user interactions, React Testing Library provides API in a package called user-event
+1. To test components that are connected to a Redux store, mock the store using <a href="https://github.com/reduxjs/redux-mock-store" target="_blank">Redux Mock Store</a> library
+2. To mock an API response, the project uses <a href="https://jsonplaceholder.typicode.com/" target="_blank">JSON Placeholder</a> to mock a free and fake API for testing and prototyping.
+3. To simulate user interactions, React Testing Library provides API in a package called <a href="https://github.com/testing-library/user-event#clickelement-eventinit-options" target="_blank">User Event</a>
+4. For E2E Testing - Consider <a href="https://pptr.dev/" target="_blank">Puppeteer</a> (headless version of the Google Chrome browser), <a href="https://www.selenium.dev/" target="_blank">Selenium</a> or <a href="https://testcafe.io/" target="_blank">Testcafe</a>
 
 ### Notable mentions/resources:
 
