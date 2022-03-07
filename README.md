@@ -8,7 +8,7 @@ This is a demo project based on React. The goals of the demo are:
 
 ## CI/CD Workflows
 
-This is a demo project highlighting how to setup a Github Action Pipeline for automated continuouse delivery and deployment. The pipeline is set up under the .github.workflows folder and has test, build and deployment workflows. The app is deployed to Heroku as the chose cloud platform. Make sure to set up your heroku key credentials on your Github Repository settings.
+This is a demo project highlighting how to setup a <a href="https://github.com/features/actions" target="_blank">Github Action</a> Pipeline for automated continuouse delivery and deployment. The pipeline is set up under the .github.workflows folder and has test, build and deployment workflows. The app is deployed to Heroku as the chose cloud platform. Make sure to set up your heroku key credentials on your Github Repository settings.
 
 The pipeline workflow tests the main branch, with the build jobs run on an Ubuntu machine. The project is based on React and the pipeline runs against Node Version 14 and 12. The pipeline installs the specified node versions and all the project dependecies, connects and deploys the app to Heroku and performs a lighthouse performance test on the specified urls.
 
