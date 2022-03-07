@@ -5,7 +5,6 @@ This is a demo project based on React. The goals of the demo are:
 1. Set up a CI/CD Pipeline using Github Actions and <a href="https://heroku.com" target="_blank">Heroku</a> Cloud Platform
 2. Set up a unit test using the <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank">React Testing Library</a> and <a href="https://jestjs.io/" target="_blank">Jest</a> as the testing tool.
 
-
 ## CI/CD Workflows
 
 This is a demo project highlighting how to setup a <a href="https://github.com/features/actions" target="_blank">Github Action</a> Pipeline for automated continuouse delivery and deployment. The pipeline is set up under the .github.workflows folder and has test, build and deployment workflows. The app is deployed to Heroku as the chose cloud platform. Make sure to set up your heroku key credentials on your Github Repository settings.
@@ -16,6 +15,10 @@ Prequisities:
 
 1. You already have a Heroku account
 2. You have set up the Heroku API KEY and APP NAME in your repository settings
+
+### Resources:
+
+To learn more on how to deploy to heroku using Github actions: https://github.com/marketplace/actions/deploy-to-heroku#:~:text=In%20your%20Repo%2C%20go%20to,automatically%20deployed%20to%20Heroku%20henceforth.
 
 ## React Testing
 
