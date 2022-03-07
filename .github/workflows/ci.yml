@@ -41,13 +41,22 @@ jobs:
         run: |
           npm run build --if-present
 
-      - name: Add remote origin
-        run: |
-          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-      - name: Deploy to Heroku
-        run: |
-          heroku restart -a
-          git push heroku HEAD:refs/heads/main -f
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: "normanmunge@gmail.com"
+          # usedocker: true
+          healthcheck: https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health
+
+      # - name: Add remote origin
+      #   run: |
+      #     git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+      # - name: Deploy to Heroku
+      #   run: |
+      #     heroku restart -a
+      #     git push heroku HEAD:refs/heads/main -f
 
       - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
