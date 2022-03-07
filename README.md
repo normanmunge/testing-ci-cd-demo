@@ -13,6 +13,18 @@ The pipeline workflow tests the main branch, with the build jobs run on an Ubunt
 
 ## React Testing
 
+Testing will mostly cover unit testing but other tests to consider are integration tests and end to end tests
+
+Tools used for testing are:
+
+1. Jest - Test runner and assertion library to execute tests and summarize the results in the terminal.
+   To install jest:
+   npm install --save-dev jest (NPM Pakcage Manager)
+   yarn install --save-dev jest (Yarn Package Manager)
+2. E2E Testing - Puppeteer (headless version of the Google Chrome browser)
+   To install Puppeteer:
+   npm install --save-dev puppeteer
+
 # Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
