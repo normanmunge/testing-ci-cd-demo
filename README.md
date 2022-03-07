@@ -11,6 +11,11 @@ This is a demo project highlighting how to setup a Github Action Pipeline for au
 
 The pipeline workflow tests the main branch, with the build jobs run on an Ubuntu machine. The project is based on React and the pipeline runs against Node Version 14 and 12. The pipeline installs the specified node versions and all the project dependecies, connects and deploys the app to Heroku and performs a lighthouse performance test on the specified urls.
 
+Prerequisities:
+
+1. You already have a Heroku account
+2. You have set up the Heroku API KEY and APP NAME in your repository settings
+
 ## React Testing
 
 Testing will mostly cover unit testing but other tests to consider are integration tests and end to end tests. The repo is meant to help you get started with testing React apps.
