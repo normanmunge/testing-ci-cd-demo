@@ -13,7 +13,7 @@ The pipeline workflow tests the main branch, with the build jobs run on an Ubunt
 
 ## React Testing
 
-Testing will mostly cover unit testing but other tests to consider are integration tests and end to end tests
+Testing will mostly cover unit testing but other tests to consider are integration tests and end to end tests. The repo is meant to help you get started with testing React apps.
 
 Tools used for testing are:
 
@@ -28,6 +28,12 @@ Tools used for testing are:
    Since this project was set up using React's creat-react-app. We're all set for writing tests otherwise, you need to install the library:
 
    npm install --save-dev @testing-library/react
+
+### Resources that might be helpful
+
+1. To test components that are connected to a Redux store, mock the store using Redux Mock Store library
+2. To mock an API response, the project uses JSON Placeholder to mock a free and fake API for testing and prototyping.
+3. To simulate user interactions, React Testing Library provides API in a package called user-event
 
 # Getting Started
 
