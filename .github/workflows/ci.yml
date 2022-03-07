@@ -46,7 +46,7 @@ jobs:
           git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
       - name: Deploy to Heroku
         run: |
-          heroku restart -a {{ secrets.HEROKU_APP_NAME }}
+          heroku restart -a
           git push heroku HEAD:refs/heads/main -f
 
       - uses: actions/checkout@main
