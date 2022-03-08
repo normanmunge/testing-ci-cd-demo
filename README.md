@@ -9,7 +9,9 @@ This is a demo project based on React. The goals of the demo are:
 
 This highlights how to setup a <a href="https://github.com/features/actions" target="_blank">Github Action</a> Pipeline for automated continuouse delivery and deployment. The pipeline is set up under the <a href="https://github.com/normanmunge/testing-ci-cd-demo/tree/main/.github/workflows">.github.workflows</a> folder and has test, build and deployment workflows. The app is deployed to Heroku as the chosen cloud platform. Make sure to set up your heroku key credentials on your Github Repository settings.
 
-The pipeline workflow tests the main branch, with the build jobs run on an Ubuntu machine. The project is based on React and the pipeline runs against Node Version 14 and 12. The pipeline installs the specified node versions and all the project dependecies, connects and deploys the app to Heroku and performs a lighthouse performance test on the specified urls.
+The pipeline workflow tests the main branch, with the build jobs run on an Ubuntu machine. The project is based on React and the pipeline runs against Node Version 14. The pipeline installs the specified node versions and all the project dependecies, connects and deploys the app to Heroku and performs a lighthouse performance test on the specified urls.
+
+The app is deployed to this url: https://testing-ci-cd-demo.herokuapp.com/
 
 Prequisities:
 
