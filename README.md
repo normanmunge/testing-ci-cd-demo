@@ -26,12 +26,12 @@ Testing will mostly cover unit testing but other tests to consider are integrati
 
 Tools used for testing are:
 
-1. Jest - Test runner and assertion library to execute tests and summarize the results in the terminal.
+1. <a href="https://jestjs.io/" target="_blank">Jest</a> - Test runner and assertion library to execute tests and summarize the results in the terminal. If you've bootstrapped your app through create-react-app then it automatically sets up jest. If not, you need to install jest.
    To install jest:
    npm install --save-dev jest (NPM Pakcage Manager)
    yarn install --save-dev jest (Yarn Package Manager)
-2. React Testing Library.
-   Since this project was set up using React's creat-react-app. We're all set for writing tests otherwise, you need to install the library:
+   
+2. <a href="https://testing-library.com/docs/" target="_blank">React Testing Library.</a> - A light-weight solution for testing web pages by querying and interacting with DOM nodes (whether simulated with JSDOM/Jest or in the browser). Since this project was set up using React's creat-react-app. We're all set for writing tests otherwise, you need to install the library:
 
    npm install --save-dev @testing-library/react
 
