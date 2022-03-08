@@ -54,6 +54,8 @@ function App() {
       </p>
       <h2>User Profile:</h2>
       {user ? <User user={user} /> : <span>Loading...</span>}
+
+      {/* <h2>Done demoing the app!</h2> */}
     </>
   );
 }
