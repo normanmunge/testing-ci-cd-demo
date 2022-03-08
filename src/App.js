@@ -55,7 +55,7 @@ function App() {
       <h2>User Profile:</h2>
       {user ? <User user={user} /> : <span>Loading...</span>}
 
-      {/* <h2>Done demoing the app!</h2> */}
+      <h2>Done demoing the app!</h2>
     </>
   );
 }
