@@ -14,10 +14,10 @@ jobs:
   build:
     #specifys the OS we want workflow to run on
     runs-on: ubuntu-latest
-    #tells our workflow to run our build on 2 versions of node
+    #tells our workflow to run our build a version of node
     strategy:
       matrix:
-        node-version: [14.x, 12.x]
+        node-version: [14.x]
 
     steps:
       #github has alread some defined Actions. v1 of checkout is responsible for cloning repo and checking into project directory
