@@ -2,12 +2,15 @@
 name: Test, Build and Deploy to Heroku
 
 #on - specify an event that will trigger the workflow eg push, pull_request, for example - on: [push, pull_request]
-#on this snippet below, workflow should be triggered only when we push to main branch
+#on this snippet below, workflow should be triggered only when we push to main branch or release branches
 on:
   push:
     branches:
       - main
       - "releases/**"
+  # pull_request_review:
+  #   types:
+  #     - submitted
 
 #specifying jobs we want to run
 jobs:
@@ -41,12 +44,6 @@ jobs:
         run: |
           npm run build --if-present
 
-      # - name: Deploy to heroku
-      #   run: |
-      #     heroku plugins:install heroku-builds
-      #     heroku builds:cancel --app ${{ secrets.HEROKU_APP_NAME }}
-      #     heroku restart --app ${{ secrets.HEROKU_APP_NAME }}
-
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -57,14 +54,6 @@ jobs:
           # healthcheck: https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health
           # checkstring: "ok"
           # delay: 10
-
-      # - name: Add remote origin
-      #   run: |
-      #     git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-      # - name: Deploy to Heroku
-      #   run: |
-      #     heroku restart -a
-      #     git push heroku HEAD:refs/heads/main -f
 
       - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
