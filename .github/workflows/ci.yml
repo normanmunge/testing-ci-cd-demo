@@ -55,6 +55,8 @@ jobs:
           heroku_email: "normanmunge@gmail.com"
           # usedocker: true
           healthcheck: https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health
+          checkstring: "ok"
+          delay: 10
 
       # - name: Add remote origin
       #   run: |
